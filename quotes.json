@@ -1,7 +1,25 @@
-{
-    "id": 1,
-    "name": "Sherry",
-    "quote": "一人一半感情不會散",
-    "date": "8/19/2023"
+{"quotes":
+    [
+        {
+            "id": 1,
+            "name": "Sherry",
+            "quote": "一人一半感情不會散",
+            "date": "8/19/2023"
+        },
+        {
+            "id": 2,
+            "name": "Sherry",
+            "quote": "El amor de una madre es difícil y sin sueldo",
+            "date": "8/19/2023"
+        },
+        {
+            "id": 3,
+            "name": "Spencer",
+            "quote": "胖胖",
+            "date": "永遠"
+        }
+    ]
 }
+
+
 

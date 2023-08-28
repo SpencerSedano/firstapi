@@ -13,9 +13,14 @@ class Quote(BaseModel):
 
 app = FastAPI()
 
-file = open("quotes.json", encoding="utf8")
+#file = open("quotes.json", encoding="utf8")
 
-data = json.load(file)
+#data = json.load(file)
+
+with open("quotes.json", encoding="utf8") as file:
+    data = json.load(file)
+    quotes = data["quotes"]
+
 
 #quotes = []
 
@@ -28,14 +33,15 @@ async def root():
 #Get all quotes
 @app.get("/quotes")
 async def get_quotes():
-    return {"blablabla": data}
+    return quotes
 
 #Get one quote
 @app.get("/quotes/{quote_id}")
-async def get_quotes(quote_id: int):
-    for quote in data:
-        if quote.id == quote_id:
-            return {"quote": data}
+async def get_quote(quote_id: int):
+    #return data["id"]
+    for quote in quotes:
+        if quote["id"] == quote_id:
+            return quote
     return {"message": "Quote was not found"}
 
 #Create Info

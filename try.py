@@ -1,9 +1,9 @@
 import json
-s = open("quotes.json", encoding="utf8")
-print(s)
 
-data = json.load(s)
+with open("quotes.json", encoding="utf8") as s:
+    data = json.load(s)
+    quotes = data["quotes"]
 
-for i in data["quotes"]:
-    print(i)
-
+for quote in quotes:
+    id_number = quote["id"]
+    print("ID:", id_number)
