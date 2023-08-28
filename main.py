@@ -4,6 +4,13 @@ from fastapi.encoders import jsonable_encoder
 
 import json
 
+#Database
+import model
+from config import engine
+
+model.Base.metadata.create_all(bind=engine)
+
+
 class Quote(BaseModel):
     id: int
     name: str
