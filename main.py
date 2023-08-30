@@ -61,6 +61,7 @@ async def get_quotes():
     conn.close()
 
     #Convert the list of tuples into a list of dictionaries
+    
     quotes_list = []
     for quote in quotes:
         quote_dict = {
@@ -70,6 +71,7 @@ async def get_quotes():
             "date": quote[3]
         }
         quotes_list.append(quote_dict)
+
     return quotes_list
 
 # Get one quote
@@ -88,9 +90,16 @@ async def get_quote(quote_id: int):
         for i in range(0,len(lst),2):
             res_dict[lst[i]] = lst[i+1]
         return res_dict
-    if quote:
-        return convert(quote)
-    return {"message": "Quote was not found"}
+    quote_list = []
+    iquote_dict = {
+        "id": quote[0],
+        "name": quote[1],
+        "quote": quote[2],
+        "date": quote[3]
+    }
+    quote_list.append(iquote_dict)
+    
+    return quote_list
 
 # Create Info
 @app.post("/quotes")

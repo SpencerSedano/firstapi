@@ -18,3 +18,13 @@ def convert(lst):
 
 quotes_list = ["id", 1, "name", "Spencer"]
 print(convert(quotes_list))
+
+alist = []
+var = "Spencer"
+for i in var:
+    alist = i
+
+quote_dict = {}
+
+
+print(quote_dict)
